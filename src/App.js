@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import MuiClass from "./components/MuiClass"
-import theme from "./theme"
+import React, { Component } from "react";
+import MuiClass from "./components/MuiClass";
+import theme from "./theme";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 //CssBaseline is MUI's version of normalize.css
 import CssBaseline from "@material-ui/core/CssBaseline";
-import genKeys from "./components/genKeys"
+import genKeys from "./components/genKeys";
 
 class App extends Component {
   constructor(props) {
@@ -13,13 +13,13 @@ class App extends Component {
     console.log("theme", this.theme);
   }
   render() {
-    console.log("yo yo")
+    console.log(genKeys());
     return (
       <MuiThemeProvider theme={this.theme}>
-         <CssBaseline />
+        <CssBaseline />
         <div>
-            <h1>App.js</h1>
-            <MuiClass />
+          <h1>App.js</h1>
+          <MuiClass />
         </div>
       </MuiThemeProvider>
     );
@@ -27,7 +27,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
