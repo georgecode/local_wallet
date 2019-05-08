@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import MuiClass from "./components/MuiClass"
+import theme from "./theme"
+import { MuiThemeProvider } from "@material-ui/core/styles";
+//CssBaseline is MUI's version of normalize.css
+import CssBaseline from "@material-ui/core/CssBaseline";
+import genKeys from "./components/genKeys"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.theme = theme();
+    console.log("theme", this.theme);
+  }
+  render() {
+    console.log("yo yo")
+    return (
+      <MuiThemeProvider theme={this.theme}>
+         <CssBaseline />
+        <div>
+            <h1>App.js</h1>
+            <MuiClass />
+        </div>
+      </MuiThemeProvider>
+    );
+  }
 }
 
 export default App;
+
+
+
+
